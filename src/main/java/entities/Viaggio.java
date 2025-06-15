@@ -17,9 +17,5 @@ public class Viaggio {
 
     @Enumerated(EnumType.STRING)
     private StatoViaggio stato;
-
-    public enum StatoViaggio {
-        IN_PROGRAMMA,
-        COMPLETATO
-    }
 }
+

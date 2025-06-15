@@ -1,11 +1,13 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.*;
+import java.util.List;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Dipendente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,5 +17,8 @@ public class Dipendente {
     private String nome;
     private String cognome;
     private String email;
-}
+    private String pathImmagineProfilo;
 
+    @OneToMany(mappedBy = "assegnatoA")
+    private List<Dispositivo> dispositivi;
+}
