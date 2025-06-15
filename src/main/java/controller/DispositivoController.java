@@ -38,7 +38,7 @@ public class DispositivoController<Dispositivo> {
 
         dispositivo.setAssegnatoA(dipendente);
         dispositivo.setStato(Dispositivo.StatoDispositivo.ASSEGNATO);
-        dispositivoRepository.save(dispositivo);
+        DipendenteRepository.save(dispositivo);
         return ResponseEntity.ok("Dispositivo assegnato");
     }
 }
